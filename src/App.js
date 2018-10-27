@@ -4,6 +4,19 @@ import Clock from './Components/Clock'
 
 
 class App extends Component {
+    constructor() {
+        super()
+        this.state = {time:new Date()}
+    }
+
+    currentTime() {
+        this.setState({time: new Date()})
+    }
+
+    componentWillMount() {
+        setInterval(() =>this.currentTime(), 1000)
+    }
+
   render() {
     return (
       <div className="App">
@@ -11,7 +24,8 @@ class App extends Component {
           <p>
             Special Relativity Simulator
           </p>
-          <Clock/>
+            <Clock text={"I\'m a standard clock"}/>
+            <p>{this.state.time.toLocaleTimeString()}</p>
         </header>
       </div>
     );

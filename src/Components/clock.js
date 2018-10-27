@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Clock = () => {
+const Clock = (props) => {
     return (
     <div>
-       <div>I'm a clock</div>
+        <div>{ props.text }</div>
     </div>
     )
 }
