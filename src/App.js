@@ -14,18 +14,19 @@ class App extends Component {
     }
 
     componentWillMount() {
-        setInterval(() =>this.currentTime(), 1000)
+        setInterval(() =>this.currentTime(), 1)
     }
 
   render() {
+
     return (
       <div className="App">
         <header className="App-header">
           <p>
             Special Relativity Simulator
           </p>
-            <Clock text={"I\'m a standard clock"}/>
-            <p>{this.state.time.toLocaleTimeString()}</p>
+            <Clock/>
+            <p>{this.state.time.toLocaleString().replace(" PM",":") + this.state.time.getMilliseconds()}</p>
         </header>
       </div>
     );
