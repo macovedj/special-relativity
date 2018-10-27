@@ -1,5 +1,11 @@
 import React from 'react';
 
-export const Clock = () => {
-    
+const Clock = () => {
+    return (
+    <div>
+       <div>I'm a clock</div>
+    </div>
+    )
 }
+
+export default Clock

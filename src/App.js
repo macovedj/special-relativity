@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Clock from './Components/Clock'
+
 
 class App extends Component {
   render() {
@@ -9,6 +11,7 @@ class App extends Component {
           <p>
             Special Relativity Simulator
           </p>
+          <Clock/>
         </header>
       </div>
     );
