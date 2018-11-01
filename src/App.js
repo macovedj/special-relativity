@@ -7,8 +7,6 @@ class App extends Component {
     constructor() {
         super();
         this.state = {time:new Date()};
-        this.speedOfMover = 0.0;
-        this.handleChange = this.handleChange.bind(this);
     }
 
     currentTime() {
@@ -21,7 +19,7 @@ class App extends Component {
 
   render() {
 
-      let stationaryTime = this.state.time.toLocaleString().replace(" PM", ":") + this.state.time.getMilliseconds().toString().slice(0,1);
+      let stationaryTime = this.state.time.toLocaleString().replace(" PM", ":").substring(12)+ this.state.time.getMilliseconds().toString().slice(0,1);
 
     return (
       <div className="App">
@@ -30,7 +28,7 @@ class App extends Component {
             Special Relativity Simulator
           </p>
             <Clock time={ stationaryTime }/>
-            <RelativisticClock time={ relativisticTime } />
+            <RelativisticClock time={ stationaryTime } />
         </header>
       </div>
     );
