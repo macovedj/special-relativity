@@ -19,15 +19,9 @@ class App extends Component {
         setInterval(() =>this.currentTime(), 100);
     }
 
-    handleChange(event) {
-        console.log(event.target.value);
-        this.setState({ speedOfMover: event.target.value });
-    }
-
   render() {
 
       let stationaryTime = this.state.time.toLocaleString().replace(" PM", ":") + this.state.time.getMilliseconds().toString().slice(0,1);
-      let relativisticTime = this.state.time.toLocaleString().replace(" PM", ":") + this.state.time.getMilliseconds().toString().slice(0,1);
 
     return (
       <div className="App">
@@ -36,7 +30,7 @@ class App extends Component {
             Special Relativity Simulator
           </p>
             <Clock time={ stationaryTime }/>
-            <RelativisticClock time={ relativisticTime } speed={ this.state.speedOfMover } changeHandler={this.handleChange} />
+            <RelativisticClock time={ relativisticTime } />
         </header>
       </div>
     );
